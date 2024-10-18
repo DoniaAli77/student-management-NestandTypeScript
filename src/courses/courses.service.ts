@@ -36,9 +36,6 @@ export class CoursesService {
     async delete(id: string): Promise<course> {
         return await this.courseModel.findByIdAndDelete(id);  // Find and delete the student
     }
-
-
-
 }
 
 
