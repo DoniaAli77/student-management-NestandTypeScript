@@ -7,7 +7,7 @@ import { updateCourseDTo } from './dto/updateStudent.dto';
 @Controller('courses')
 export class CoursesController {
     constructor(private courseService: CoursesService) { }
-    //The StudentService is injected through the class constructor. 
+    //The courseService is injected through the class constructor. 
     //Notice the use of the private syntax. 
     //This shorthand allows us to both declare and initialize the courseService member immediately in the same location.
     @Get()

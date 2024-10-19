@@ -12,14 +12,14 @@ export class CoursesService {
 
     // create a course
     async create(courseData: course): Promise<course> {
-        const newStudent = new this.courseModel(courseData);  // Create a new student document
-        return await newStudent.save();  // Save it to the database
+        const newCourse = new this.courseModel(courseData);  // Create a new student document
+        return await newCourse.save();  // Save it to the database
     }
 
     // Get all courses
     async findAll(): Promise<course[]> {
-        let students= await this.courseModel.find();  // Fetch all students from the database
-        return students
+        let courses= await this.courseModel.find();  // Fetch all students from the database
+        return courses
     }
 
     // Get a course by ID
@@ -28,7 +28,7 @@ export class CoursesService {
     }
 
     // Update a course's details by ID
-    async update(id: string, updateData: updateCourseDTo): Promise<CSSCounterStyleRule> {
+    async update(id: string, updateData: updateCourseDTo): Promise<course> {
         return await this.courseModel.findByIdAndUpdate(id, updateData, { new: true });  // Find and update the student
     }
 
