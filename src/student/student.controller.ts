@@ -3,6 +3,7 @@ import { StudentService } from './student.service';
 import { student } from './models/student.schema';
 import { createStudentDTo } from './dto/createstudent.dto';
 import { updateStudentDTo } from './dto/updateStudent.dto';
+import { promises } from 'dns';
 
 @Controller('students') // it means anything starts with /student
 export class StudentController {
@@ -17,7 +18,7 @@ export class StudentController {
     }
     @Get(':id')// /student/:id
     // Get a single student by ID
-    async getStudentById(@Param('id') id: string) {// Get the student ID from the route parameters
+    async getStudentById(@Param('id') id: string):Promise<student> {// Get the student ID from the route parameters
         const student = await this.studentService.findById(id);
         return student;
     }

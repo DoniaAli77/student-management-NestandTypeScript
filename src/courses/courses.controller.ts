@@ -9,7 +9,8 @@ export class CoursesController {
     constructor(private courseService: CoursesService) { }
     //The courseService is injected through the class constructor. 
     //Notice the use of the private syntax. 
-    //This shorthand allows us to both declare and initialize the courseService member immediately in the same location.
+    //This shorthand allows us to both declare and initialize 
+    //the courseService member immediately in the same location.
     @Get()
     // Get all course
     async getAllcourses(): Promise<course[]> {
